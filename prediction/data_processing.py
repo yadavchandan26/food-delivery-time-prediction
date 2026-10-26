@@ -32,4 +32,7 @@ def split(data):
     return x,y
 
 def final_processing(data_path):
-   
+    data=load_data(data_path)
+    data=preprocessing(data)
+    x,y=split(data)
+    
