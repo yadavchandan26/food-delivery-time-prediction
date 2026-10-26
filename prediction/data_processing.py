@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
 
 data_path="\data\Food_Delivery_Times.csv"
 
@@ -35,4 +36,10 @@ def final_processing(data_path):
     data=load_data(data_path)
     data=preprocessing(data)
     x,y=split(data)
-    
+
+    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3,random_state=42)
+    scale=StandardScaler()
+    x_train_scale=scale.fit_transform(x_train)
+    x_test_scale=scale.transform(x_test)
+
+    return x_train_scale,x_test_scale,y_train,y_test
