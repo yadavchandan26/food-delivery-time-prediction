@@ -6,4 +6,5 @@ def train_model(x_train_scale,x_test_scale,y_train,y_test):
 
     training_score=model.score(x_train_scale,x_test_scale)
     print("training score is :",training_score)
-    
+
+    return model
