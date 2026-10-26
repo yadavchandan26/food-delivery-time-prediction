@@ -16,10 +16,10 @@ def preprocessing(data):
     cat_col=data.select_dtypes(include='object').columns.tolist()
 
     num_imp=SimpleImputer(strategy='median')
-    cat_col=SimpleImputer(strategy='most_frequent')
+    cat_imp=SimpleImputer(strategy='most_frequent')
 
     data[numeric_col]=num_imp.fit_transform(data[numeric_col])
-    data[cat_col]=cat_col.fit_transform(data[cat_col])
+    data[cat_col]=cat_imp.fit_transform(data[cat_col])
 
     return data
 
