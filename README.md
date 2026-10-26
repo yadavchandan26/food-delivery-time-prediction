@@ -25,9 +25,7 @@
 - [Model Comparison](#-model-comparison)
 - [Sample Prediction](#-sample-prediction)
 - [Usage](#-usage)
-- [Limitations](#-limitations)
 - [Tech Stack](#-tech-stack)
-- [Future Improvements](#-future-improvements)
 - [Author](#-author)
 
 ---
