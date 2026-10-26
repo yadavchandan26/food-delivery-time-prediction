@@ -31,7 +31,7 @@ def split(data):
 
     return x,y
 
-def final_processing(data_path):
-    data=load_data(data_path)
-    data=preprocessing(data)
-    x,y=split(data)
+
+x=data.drop(['Order_ID','Delivery_Time_min'],axis=1)
+x=pd.get_dummies(x,columns=['Traffic_Level','Weather','Vehicle_Type','Time_of_Day'],drop_first=True)
+y=data['Delivery_Time_min']
